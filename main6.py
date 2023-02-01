@@ -6,11 +6,11 @@ import random
 
 
 class RandomWindow(QMainWindow):
-    def init(self):
-        super(RandomWindow, self).init()
+    def __init__(self):
+        super(RandomWindow, self).__init__()
         self.game_balance = 60
         self.atemps_pop = 3
-        loadUi('random12.ui', self)
+        loadUi('random.ui', self)
         self.start.clicked.connect(self.start_game)
         
     def __generate_random_number(self):
@@ -40,7 +40,7 @@ class RandomWindow(QMainWindow):
         # elif self.get_random_number == 8:
         self.eight.clicked.connect(lambda: self.eight_button(self.get_random_number))
         # elif self.get_random_number == 9:
-        self.nine.clicked.connect(lambda: self.nine_button(self.get_random_number))
+        self.night.clicked.connect(lambda: self.night_button(self.get_random_number))
         # elif self.get_random_number == 10:
         self.ten.clicked.connect(lambda: self.ten_button(self.get_random_number))
         print(self.get_random_number)
@@ -52,20 +52,20 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num1 != random_number:
             self.atemps_pop -= 1
             self.attemps.setText(f"Attemps: {self.atemps_pop}")
-            
-   def two_button(self, random_number):
+
+    def two_button(self, random_number):
         num2 = int(self.two.text())
         if num2 == random_number:
             self.game_balance += 80
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num2 != random_number:
             self.atemps_pop -= 1
@@ -78,7 +78,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num3 != random_number:
             self.atemps_pop -= 1
@@ -91,7 +91,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num4 != random_number:
             self.atemps_pop -= 1
@@ -104,7 +104,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num5 != random_number:
             self.atemps_pop -= 1
@@ -117,7 +117,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num6 != random_number:
             self.atemps_pop -= 1
@@ -130,7 +130,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num7 != random_number:
             self.atemps_pop -= 1
@@ -143,20 +143,22 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num8 != random_number:
             self.atemps_pop -= 1
             self.attemps.setText(f"Attemps: {self.atemps_pop}")
-            
-     def nine_button(self, random_number):
-        num9 = int(self.nine.text())
+        
+    
+
+    def night_button(self, random_number):
+        num9 = int(self.night.text())
         if num9 == random_number:
             self.game_balance += 80
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num9 != random_number:
             self.atemps_pop -= 1
@@ -169,7 +171,7 @@ class RandomWindow(QMainWindow):
             self.balance.setText(f"Balance:{self.game_balance}с")
             self.attemps.setText(f"Win")
             self.get_random_number = self.__generate_random_number()
-        elif self.atemps_pop == 0:
+        elif self.atemps_pop == 1:
             self.attemps.setText(f"Lose!")
         elif num10 != random_number:
             self.atemps_pop -= 1
